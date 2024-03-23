@@ -1,15 +1,15 @@
 import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router'
-import Dashboard from './Components/Dashboard'
-import Setting from './Components/Setting'
+import Dashboard from './components/Dashboard'
+import Setting from './components/Setting'
 
 
 export default  function App() {
   return (
     <>
     <Routes>
-      <Route path="/Dashboard" element={<Dashboard/>}/>
+      <Route path="/" element={<Dashboard/>}/>
       <Route path="/Setting" element={<Setting/>}/>
     </Routes>
 
