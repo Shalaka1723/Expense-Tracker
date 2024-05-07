@@ -28,7 +28,7 @@ export default function Dashboard() {
     <div className="flex flex-rows-2"> 
       <Navbar />
 
-      <div className="grid grid-cols-2 grid-rows-2 gap-5 bg-pink-300 self-center w-full">
+      <div className="grid grid-cols-2 grid-rows-2 gap-5 bg-pink-300 self-center w-full p-3">
       
           {/* grid L1 */}
           <div className="border-2">
