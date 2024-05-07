@@ -1,5 +1,24 @@
 import React from 'react'
 import Navbar from './Navbar'
+import { PieChart } from 'recharts'
+import Chart from 'react-google-charts'
+
+
+export const data = [
+    ["Task", "Hours per Day"],
+    ["Work", 11],
+    ["Eat", 2],
+    ["Commute", 2],
+    ["Watch TV", 2],
+    ["Sleep", 7], // CSS-style declaration
+  ];
+  
+  export const options = {
+    title: "My Daily Activities",
+    pieHole: 0.4,
+    is3D: false,
+  };
+  
 
 function Overview() {
   return (
@@ -29,7 +48,34 @@ function Overview() {
 
 
             </div>
-            <div className=' bg-slate-800 h-2/3'> B</div>
+            <div className=' bg-slate-800 h-2/3'> B
+
+                    <div>
+
+                    <Chart
+                        chartType="PieChart"
+                        width="100%"
+                        height="400px"
+                        data={data}
+                        options={options}
+                        />
+                        
+                    </div>
+                    <div>
+
+                    <Chart
+                        chartType="PieChart"
+                        width="100%"
+                        height="400px"
+                        data={data}
+                        options={options}
+                        />
+                        
+                    </div>
+
+
+
+            </div>
          </div>
       </div>
     </>
