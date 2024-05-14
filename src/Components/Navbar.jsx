@@ -5,7 +5,7 @@ import etlogo from "../assets/images/etlogo.jpg"
 export default function Navbar() {
   return (
     <>
-      <div className='bg-cyan-200 flex flex-col  left-0 top-0  w-64 p-5'>
+      <div className='bg-cyan-200 flex flex-col  left-0 top-0 h-screen  w-64 p-5'>
         <img src={etlogo} className=' w-24 rounded-full self-center mb-4 '/>
         <h1 className='text-bold text-lg'>MY EXPENSE TRACKER</h1>
 

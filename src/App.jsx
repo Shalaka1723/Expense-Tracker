@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router'
 import Dashboard from './components/Dashboard'
 import Setting from './components/Setting'
 import Overview from './components/Overview'
+import Transactions from './components/Transactions'
 
 
 export default  function App() {
@@ -13,6 +14,7 @@ export default  function App() {
       <Route path="/" element={<Dashboard/>}/>
       <Route path="/Overview" element={<Overview/>}/>
       <Route path="/Setting" element={<Setting/>}/>
+      <Route path="/Transactions" element={<Transactions/>}/>
 
     
     </Routes>

@@ -12,7 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.14",
+    "@mui/x-charts": "^7.4.0",
     "@mui/x-date-pickers": "^6.19.8",
     "apexcharts": "^3.49.0",
     "dayjs": "^1.11.10",
@@ -20,7 +22,7 @@
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.1",
     "react-router-dom": "^6.22.3",
-    "recharts": "^2.12.3"
+    "recharts": "^2.12.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
