@@ -3,6 +3,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import RadioGroup from '@mui/material/RadioGroup';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 import Navbar from "./Navbar";
 import Monthly from "./Monthly";
@@ -56,7 +59,7 @@ export default function Dashboard() {
                 <Button
                   endIcon={<AddCircleIcon sx={{ color: blue[400] }} />}
                   onClick={handleOpen}
-                  
+                  style={{backgroundColor: "cyan"}}
                   className="border px-6 py-4 h-fit m-6 text-3xl rounded-3xl  text-white shadow-lg "
                 >
                   Add a transaction{" "}
@@ -69,7 +72,12 @@ export default function Dashboard() {
                 aria-describedby="modal-modal-description"
                 >
                   <Box sx={style}>
-                    <input placeholder="Enter Amount." className="border rounded-sm px-2"></input>
+                    <input placeholder="Enter Amount." className="border rounded-md p-4"></input>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                      <DemoContainer components={['DateTimePicker']}>
+                        <DateTimePicker label="Basic date time picker" />
+                      </DemoContainer>
+                    </LocalizationProvider>
                   <FormControl>
                       <FormLabel id="demo-row-radio-buttons-group-label">Category</FormLabel>
                       <RadioGroup
