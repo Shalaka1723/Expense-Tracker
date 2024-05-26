@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
 
 const data = [
-  { value: 5, label: 'A' },
+  { value: 5, label: 'Food' },
   { value: 10, label: 'B' },
   { value: 15, label: 'C' },
   { value: 20, label: 'D' },
