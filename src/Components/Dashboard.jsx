@@ -33,7 +33,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="flex flex-rows-2">
+      <div className="flex flex-row">
         <Navbar />
         <div className="flex flex-col gap-5 bg-slate-50 self-center w-screen h-screen p-5">
           {/* col top */}

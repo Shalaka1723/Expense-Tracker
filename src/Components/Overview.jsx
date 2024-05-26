@@ -24,8 +24,8 @@ function Overview() {
   return (
     <>
     
-      <div className='flex h-screen'>
-         <Navbar className=' w-'/> 
+      <div className='flex flex-row h-screen'>
+         <Navbar className=''/> 
 
         <div className='flex flex-col cols-2 h-screen w-screen '>
             <div className=' bg- flex h-1/3'> A
