@@ -6,7 +6,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-
+import { ThemeProvider } from '@mui/material/styles';
 import Navbar from "./Navbar";
 import Monthly from "./Monthly";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -35,9 +35,9 @@ export default function Dashboard() {
     <>
       <div className="flex flex-row">
         <Navbar />
-        <div className="flex flex-col gap-5 bg-slate-50 self-center w-screen h-screen p-5">
+        <div className="flex flex-col gap-5 bg-slate-50 self-center  w-screen h-screen p-5">
           {/* col top */}
-          <div className="flex h-1/2 p-5 items-center place-content-center gap-20">
+          <div className="flex h-1/2 p-5 justify-around gap-20">
             <div className=" bg- h-fit w-fit p-10 border rounded-3xl shadow-lg  ">
               {" "}
               {/* top left */}
@@ -54,7 +54,7 @@ export default function Dashboard() {
           </div>
 
           {/* col bottom */}
-          <div className=" flex h-1/2 p-5 items-center place-content-center gap-20">
+          <div className=" flex h-1/2 p-5 items-center justify-between gap-20">
              <div className=" bg-white w-[450px] border px-6 py-4 h-fit rounded-3xl shadow-lg "> {/*col bottom  left */}
                 <Button
                   endIcon={<AddCircleIcon sx={{ color: blue[400] }} />}

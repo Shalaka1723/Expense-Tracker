@@ -4,10 +4,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import RadioGroup from '@mui/material/RadioGroup';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { Box, Button, FormControl, FormControlLabel, FormLabel, Modal, Radio, Typography } from "@mui/material";
+import { Box, Button, FormControl, FormControlLabel, FormLabel, Radio } from "@mui/material";
 import { blue } from "@mui/material/colors";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Navbar from "./Navbar";
+import { ThemeProvider } from '@mui/material/styles';
 
 const style = {
   position: "absolute",
@@ -22,6 +23,9 @@ const style = {
 };
 
 const Transactions = () => {
+
+    const [amount, setAmount] = useState('');
+    const [note, setNote] = useState('');
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -39,8 +43,8 @@ const Transactions = () => {
 
                   
                       <div className=" " >
-                        <input placeholder="Enter Amount." className="border rounded-md p-2 my-2"></input>
-                        <input placeholder="Enter Note" className="border rounded-md p-2 py-3 my-2"></input>
+                        <input value={amount} onChange={(e)=>{setAmount(e.target.value)}} name="amount" type="number" placeholder="Enter Amount." className="border rounded-md p-2 my-2"></input>
+                        <input value={note} onChange={(e)=>{setNote(e.target.value)}} name="note" type="text" placeholder="Enter Note" className="border rounded-md p-2 py-3 my-2"></input>
                       </div>
                       <div className="">
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
