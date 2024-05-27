@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import RadioGroup from '@mui/material/RadioGroup';
@@ -9,6 +9,8 @@ import { blue } from "@mui/material/colors";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Navbar from "./Navbar";
 import { ThemeProvider } from '@mui/material/styles';
+import { transactionApi } from "../apis/api";
+import dayjs from "dayjs";
 
 const style = {
   position: "absolute",
@@ -26,6 +28,12 @@ const Transactions = () => {
 
     const [amount, setAmount] = useState('');
     const [note, setNote] = useState('');
+    const [date, setDate] = useState(dayjs());
+    const [radio, setRadio] = useState('');
+    console.log(date.$d,amount,note,radio)
+    let traAdd = ()=>{
+      transactionApi(amount,note)
+    }
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -40,7 +48,6 @@ const Transactions = () => {
 
           <div className=" flex  bg-white w- border px-6 py-4 h-fit rounded-3xl shadow-lg gap-3  "> 
           
-
                   
                       <div className=" " >
                         <input value={amount} onChange={(e)=>{setAmount(e.target.value)}} name="amount" type="number" placeholder="Enter Amount." className="border rounded-md p-2 my-2"></input>
@@ -49,7 +56,7 @@ const Transactions = () => {
                       <div className="">
                             <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DemoContainer components={['DateTimePicker']}>
-                              <DateTimePicker label="Basic date time picker" />
+                              <DateTimePicker label="Basic date time picker" value={date} onChange={(newValue)=>{setDate(newValue)}} />
                             </DemoContainer>
                           </LocalizationProvider>
                       </div>
@@ -62,16 +69,17 @@ const Transactions = () => {
                               aria-labelledby="demo-row-radio-buttons-group-label"
                               name="row-radio-buttons-group"
                               >
-                              <FormControlLabel value="food" control={<Radio />} label="Food" />
-                              <FormControlLabel value="bills" control={<Radio />} label="Bills" />
-                              <FormControlLabel value="travel" control={<Radio />} label="Travel" />
-                              <FormControlLabel value="shopping" control={<Radio />} label="Shopping" />
+                              <FormControlLabel value="food" control={<Radio onChange={(e)=>{setRadio(e.target.value)}} />} label="Food" />
+                              <FormControlLabel value="bills" control={<Radio onChange={(e)=>{setRadio(e.target.value)}} />} label="Bills" />
+                              <FormControlLabel value="travel" control={<Radio onChange={(e)=>{setRadio(e.target.value)}} />} label="Travel" />
+                              <FormControlLabel value="shopping" control={<Radio onChange={(e)=>{setRadio(e.target.value)}} />} label="Shopping" />
 
                             </RadioGroup>
                         </FormControl>
                         </div>
 
-                      <button
+                      <button onClick={()=>{traAdd()}}
+
                         className=" place-self-end border px-6 py-4 h-fit m-6 text-3xl rounded-3xl  bg-cyan-300 text-white shadow-lg ">
                         Add a transaction {' '}
                         <AddCircleIcon/>
