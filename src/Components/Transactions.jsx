@@ -30,12 +30,13 @@ const Transactions = () => {
     const [note, setNote] = useState('');
     const [date, setDate] = useState(dayjs());
     const [radio, setRadio] = useState('');
+    const [open, setOpen] = React.useState(false);
+    
     console.log(date.$d,amount,note,radio)
     let traAdd = ()=>{
-      transactionApi(amount,note)
+      transactionApi(amount,note,date,radio)
     }
 
-    const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -80,14 +81,14 @@ const Transactions = () => {
 
                       <button onClick={()=>{traAdd()}}
 
-                        className=" place-self-end border px-6 py-4 h-fit m-6 text-3xl rounded-3xl  bg-cyan-300 text-white shadow-lg ">
+                        className=" place-self-end border px-6 py-4 h-fit m-6 text-3xl rounded-3xl  bg-lime-300 text-white shadow-lg ">
                         Add a transaction {' '}
                         <AddCircleIcon/>
                       </button>
                   </div>
 
                 <div>
-                <h1 className=" text-center text-4xl font-medium m-6 text-cyan-600">Transactions</h1>
+                <h1 className=" text-center text-4xl font-medium m-6 text-lime-600">Transactions</h1>
                 </div>  
 
       </div>
