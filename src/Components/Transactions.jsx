@@ -89,6 +89,24 @@ const Transactions = () => {
 
                 <div>
                 <h1 className=" text-center text-4xl font-medium m-6 text-lime-600">Transactions</h1>
+                  <table className="table-auto">
+                    <thead>
+                      <tr>
+                        <th>Sr.No.</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Note</th>
+                        <th>Category</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <td>a</td>
+                      <td>b</td>
+                      <td>c</td>
+                      <td>d</td>
+                      <td>e</td>
+                    </tbody>
+                  </table>
                 </div>  
 
       </div>

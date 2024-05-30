@@ -12,11 +12,11 @@ export default function Navbar() {
         <ul className='mt-20 flex flex-col justify-between'>
           
          
-          <Link to={"/"} className='border rounded border-white text-white font-semibold text-center p-2 m-1 '>Dashboard</Link>
-          <Link to={"/Transactions"} className='border rounded border-white text-white text-center p-2 m-1 '>Transactions</Link>
-          <Link to={"/Overview"} className='border rounded border-white text-white text-center p-2 m-1 '>Overview</Link>
-          <button className='border rounded border-white text-white p-2 m-1 '>Home</button>
-          <button className='border rounded border-white text-white p-2 m-1 '>My Account</button>
+          <Link to={"/"} className='border rounded-lg border-white text-white font-semibold text-center p-2 m-1 '>Dashboard</Link>
+          <Link to={"/Transactions"} className='border rounded-lg border-white text-white text-center p-2 m-1 '>Transactions</Link>
+          <Link to={"/Overview"} className='border rounded-lg border-white text-white text-center p-2 m-1 '>Overview</Link>
+          <button className='border rounded-lg border-white text-white p-2 m-1 '>Home</button>
+          <button className='border rounded-lg border-white text-white p-2 m-1 '>My Account</button>
           <button className='text-lime-700 shadow-lg font-bold m-4 p-2 rounded-3xl bg-lime-200 border border-cyan-700'>Log Out</button>
         </ul>
 
