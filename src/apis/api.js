@@ -25,3 +25,16 @@ export const transactionApi = async (amount, note, date, radio) => {
       console.log(error);
     });
 };
+
+export const tlistApi = async ()=>{
+  const lEntry = "";
+
+  let call = await axios.get(
+    lEntry,
+    {},      
+    {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+}
