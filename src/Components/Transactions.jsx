@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -16,56 +16,56 @@ import { blue } from "@mui/material/colors";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Navbar from "./Navbar";
 import { ThemeProvider } from "@mui/material/styles";
-import { transactionApi } from "../apis/api";
+import {  transactionApi} from "../apis/api";
 import dayjs from "dayjs";
 import { Tcard } from "./Tcard";
 import MUIDataTable from "mui-datatables";
 
-const columns = [
-  {
-    name: "name",
-    label: "Name",
-    options: {
-      filter: true,
-      sort: true,
-    },
-  },
-  {
-    name: "company",
-    label: "Company",
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-  {
-    name: "city",
-    label: "City",
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-  {
-    name: "state",
-    label: "State",
-    options: {
-      filter: true,
-      sort: false,
-    },
-  },
-];
+// const columns = [
+//   {
+//     name: "date",
+//     label: "Date",
+//     options: {
+//       filter: true,
+//       sort: true,
+//     },
+//   },
+//   {
+//     name: "amount",
+//     label: "Amount",
+//     options: {
+//       filter: true,
+//       sort: false,
+//     },
+//   },
+//   {
+//     name: "radio",
+//     label: "Category",
+//     options: {
+//       filter: true,
+//       sort: false,
+//     },
+//   },
+//   {
+//     name: "note",
+//     label: "Note",
+//     options: {
+//       filter: true,
+//       sort: false,
+//     },
+//   },
+// ];
 
-const data = [
-  { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
-  { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
-  { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
-  { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
-];
+// const data = [
+//   { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
+//   { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
+//   { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
+//   { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
+// ];
 
-const options = {
-  filterType: "checkbox",
-};
+// const options = {
+//   // filterType: "checkbox", 
+// };
 
 const style = {
   position: "absolute",
@@ -80,19 +80,33 @@ const style = {
 };
 
 const Transactions = () => {
+
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
   const [date, setDate] = useState(dayjs());
   const [radio, setRadio] = useState("");
   const [open, setOpen] = React.useState(false);
+  const [tableData,setTableData] = useState("");
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   console.log(date.$d, amount, note, radio);
+  
   let traAdd = () => {
     transactionApi(amount, note, date, radio);
   };
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // let callData = async() =>{
+  //   let listSave = await listApi();
+  //   setTableData(listSave)
+  // }
+
+
+  // useEffect(() => {
+  //   callData()
+  // }, [])
+  
+console.log(tableData)
 
   return (
     <>
@@ -209,12 +223,12 @@ const Transactions = () => {
               Transactions
             </h1>
           </div>
-          <MUIDataTable
+          {/* <MUIDataTable
             title={"Transaction List"}
-            data={data}
+            data={tableData}
             columns={columns}
             options={options}
-          />
+          /> */}
         </div>
       </div>
     </>

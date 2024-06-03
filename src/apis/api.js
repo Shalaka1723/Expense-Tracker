@@ -26,15 +26,19 @@ export const transactionApi = async (amount, note, date, radio) => {
     });
 };
 
-export const tlistApi = async ()=>{
-  const lEntry = "";
-
-  let call = await axios.get(
-    lEntry,
-    {},      
-    {
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-  })
-}
+// export const listApi = async ()=>{
+//   const lEntry = "http://localhost:7000/list";
+//   let response 
+//   let apiCall = await axios.get(
+//     lEntry,    
+//     {
+//     headers: {
+//       "Content-Type": "application/x-www-form-urlencoded",
+//     },
+//   }).then((res)=>{
+//     response = res.data.data
+//     // console.log(res)
+//   }).catch((error)=>{console.log(error)})
+//   // console.log(response)
+//   return response
+// }

@@ -7,7 +7,7 @@ import Transactions from './components/Transactions'
 import Dashboard from './components/Dashboard'
 
 
-export default  function App() {
+export default function App() {
   return (
     <>
     <Routes>
