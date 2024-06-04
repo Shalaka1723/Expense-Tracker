@@ -21,51 +21,51 @@ import dayjs from "dayjs";
 import { Tcard } from "./Tcard";
 import MUIDataTable from "mui-datatables";
 
-// const columns = [
-//   {
-//     name: "date",
-//     label: "Date",
-//     options: {
-//       filter: true,
-//       sort: true,
-//     },
-//   },
-//   {
-//     name: "amount",
-//     label: "Amount",
-//     options: {
-//       filter: true,
-//       sort: false,
-//     },
-//   },
-//   {
-//     name: "radio",
-//     label: "Category",
-//     options: {
-//       filter: true,
-//       sort: false,
-//     },
-//   },
-//   {
-//     name: "note",
-//     label: "Note",
-//     options: {
-//       filter: true,
-//       sort: false,
-//     },
-//   },
-// ];
+const columns = [
+  {
+    name: "date",
+    label: "Date",
+    options: {
+      filter: true,
+      sort: true,
+    },
+  },
+  {
+    name: "amount",
+    label: "Amount",
+    options: {
+      filter: true,
+      sort: false,
+    },
+  },
+  {
+    name: "radio",
+    label: "Category",
+    options: {
+      filter: true,
+      sort: false,
+    },
+  },
+  {
+    name: "note",
+    label: "Note",
+    options: {
+      filter: true,
+      sort: false,
+    },
+  },
+];
 
-// const data = [
-//   { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
-//   { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
-//   { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
-//   { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
-// ];
+const data = [
+  { name: "Joe James", company: "Test Corp", city: "Yonkers", state: "NY" },
+  { name: "John Walsh", company: "Test Corp", city: "Hartford", state: "CT" },
+  { name: "Bob Herm", company: "Test Corp", city: "Tampa", state: "FL" },
+  { name: "James Houston", company: "Test Corp", city: "Dallas", state: "TX" },
+];
 
-// const options = {
-//   // filterType: "checkbox", 
-// };
+const options = {
+  // filterType: "checkbox", 
+};
 
 const style = {
   position: "absolute",
@@ -223,12 +223,12 @@ console.log(tableData)
               Transactions
             </h1>
           </div>
-          {/* <MUIDataTable
+          <MUIDataTable
             title={"Transaction List"}
             data={tableData}
             columns={columns}
             options={options}
-          /> */}
+          />
         </div>
       </div>
     </>
