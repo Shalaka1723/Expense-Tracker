@@ -42,3 +42,19 @@ export const listApi = async ()=>{
   // console.log(response)
   return response
 }
+export const expApi = async ()=>{
+  const lEntry = "http://localhost:7000/list";
+  let response 
+  let apiCall = await axios.get(
+    lEntry,    
+    {
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  }).then((res)=>{
+    response = res.data.data
+    // console.log(res)
+  }).catch((error)=>{console.log(error)})
+  // console.log(response)
+  return response
+}
