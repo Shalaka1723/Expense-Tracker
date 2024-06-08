@@ -16,7 +16,7 @@ import { blue } from "@mui/material/colors";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Navbar from "./Navbar";
 import { ThemeProvider } from "@mui/material/styles";
-import {  transactionApi} from "../apis/api";
+import {  listApi, transactionApi} from "../apis/api";
 import dayjs from "dayjs";
 import { Tcard } from "./Tcard";
 import MUIDataTable from "mui-datatables";
@@ -96,18 +96,19 @@ const Transactions = () => {
     transactionApi(amount, note, date, radio);
   };
 
-  // let callData = async() =>{
-  //   let listSave = await listApi();
-  //   setTableData(listSave)
-  // }
+  let callData = async() =>{
+    let listSave = await listApi();
+    setTableData(listSave)
+  }
 
 
-  // useEffect(() => {
-  //   callData()
-  // }, [])
+  useEffect(() => {
+    callData()
+  }, [])
   
-console.log(tableData)
-
+  console.log(tableData)
+  console.log(tableData[0].amount)
+  
   return (
     <>
       <div className="bg-slate-50 flex flex-row">
@@ -225,7 +226,7 @@ console.log(tableData)
           </div>
           <MUIDataTable
             title={"Transaction List"}
-            data={tableData}
+            data={data}
             columns={columns}
             options={options}
           />
